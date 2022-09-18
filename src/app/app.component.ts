@@ -18,7 +18,7 @@ export class AppComponent {
     { "key": "F", "cord": "F	Gm	Am	B♭	C	Dm	Em♭5" },
     { "key": "G", "cord": "G	Am	Bm	C	D	Em	F#m♭5" },
     { "key": "A", "cord": "A	Bm	C#m	D	E	F#m	G#m♭5" },
-    { "key": "B", "cord": "D	Em	F#m	G	A	Bm	C#m♭5" }
+    { "key": "B", "cord": "B	C#	D#	E	F#	G#m	A#m♭5" }
   ];
 
   @ViewChild('teams') teams!: ElementRef;
