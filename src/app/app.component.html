@@ -302,13 +302,13 @@
   }
 </style>
 
+
 <div class="container6" class="content" role="main">
     <p></p>
     <div class="col">
-      <p>Select the key {{ teams }}</p>
+      <p style="text-align:center"><strong>Select the key </strong> </p>
         <select #teams (change)="onSelected()">
-          <option default>Key</option>
-          <option>C</option>	
+          <option default>C</option>	
           <option>D</option>
           <option>E</option>
           <option>F</option>
@@ -320,15 +320,8 @@
   </div>
 
   <div>
-  <div class=container6 ><b>Chords</b></div>
-    <body class=>
-      <div class="container6">
-      {{this.ItemsArray}}
-      </div>
-           <!--
-      <tr *ngFor="let item of ItemsArray">
-        <th>{{ item}}</th>
-      </tr>
-    -->
-  </body>
-</div>
+ <!-- <div class=container6 ><b>Chords</b></div>
+-->
+<p style="text-align:center"><strong>Chords</strong></p>
+<p style="text-align:center"><strong>{{this.ItemsArray}}</strong></p>
+
