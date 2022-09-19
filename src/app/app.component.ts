@@ -23,6 +23,10 @@ export class AppComponent {
 
   @ViewChild('teams') teams!: ElementRef;
 
+  constructor() {
+    this.ItemsArray = "C	Dm	Em	F	G	Am	Bm♭5";
+  }
+
 	onSelected():void {
     var str = this.teams.nativeElement.value;
     var foundstr="";
