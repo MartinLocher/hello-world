@@ -1,15 +1,18 @@
 import { Component,ElementRef, ViewChild } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
+
 })
 
   
 export class AppComponent {
   title = 'All Chords in a Key';
   ItemsArray = "";
+ 
   
   dacords: { key: string, cord: string }[] = [
     { "key": "C", "cord": "C	Dm	Em	F	G	Am	Bm♭5"},
@@ -24,6 +27,7 @@ export class AppComponent {
   @ViewChild('teams') teams!: ElementRef;
 
   constructor() {
+    
     this.ItemsArray = "C	Dm	Em	F	G	Am	Bm♭5";
   }
 
