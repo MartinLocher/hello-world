@@ -1,5 +1,17 @@
 import { Component,ElementRef, ViewChild } from '@angular/core';
 
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
+export class User {
+
+  constructor (
+  public id: number,
+  public firstname: String,
+  public lastname: String)
+  {};
+}
 
 @Component({
   selector: 'app-root',
@@ -12,8 +24,11 @@ import { Component,ElementRef, ViewChild } from '@angular/core';
 export class AppComponent {
   title = 'All Chords in a Key';
   ItemsArray = "";
- 
-  
+  users! : User[];
+  public baseUrl = "http://3.141.170.45:8080/customer";
+
+// public baseUrl = "http://localhost:8080/customer";
+
   dacords: { key: string, cord: string }[] = [
     { "key": "C", "cord": "C	Dm	Em	F	G	Am	Bm♭5"},
     { "key": "D", "cord": "D	Em	F#m	G	A	Bm	C#m♭5" },
@@ -26,9 +41,21 @@ export class AppComponent {
 
   @ViewChild('teams') teams!: ElementRef;
 
-  constructor() {
+  constructor(private httpClient:HttpClient) {
     
     this.ItemsArray = "C	Dm	Em	F	G	Am	Bm♭5";
+  }
+
+  ngOnInit(){
+
+    console.log("onnginit");
+
+    return this.httpClient.get<any>(this.baseUrl).subscribe(response=>{
+      console.log(response);
+      console.log("hello");
+      this.users=response;
+
+    });
   }
 
 	onSelected():void {
@@ -47,4 +74,6 @@ export class AppComponent {
    
     console.log(foundstr+"*"+str+"*"+this.ItemsArray);
 	}
+
+  
 }
